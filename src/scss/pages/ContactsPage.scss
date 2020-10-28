@@ -1,7 +1,8 @@
 .contacts {
   width: 100%;
   margin-top: 90px;
-  &__list{
+
+  &__list {
     box-shadow: 0 1px 10px $primary-gray;
     border-radius: 30px;
     overflow-x: hidden;
@@ -12,11 +13,31 @@
       border: none;
     }
   }
+
   &__item {
     padding: 30px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid $primary-darkgray;
+    position: relative;
+
+    &_edit, &_delete {
+      position: absolute;
+      right: 20px;
+      top: 5px !important;
+      display: none;
+    }
+
+    &_delete {
+      right: 150px;
+    }
+
+    &:hover {
+      .contacts__item_edit, .contacts__item_delete {
+        display: block;
+      }
+    }
   }
+
 }

@@ -4,6 +4,7 @@ import {request} from '../../utils/http'
 import {useDispatch} from 'react-redux'
 import {connect} from 'react-redux'
 import {setError, signIn} from '../../redux/actions'
+import {CONTACT_ADD} from '../../redux/types'
 
 function Auth({actionText, link, actionLink, linkText, question, user}) {
    const dispatch = useDispatch()
@@ -19,8 +20,15 @@ function Auth({actionText, link, actionLink, linkText, question, user}) {
    const onSubmitHandler = async (e) => {
       e.preventDefault()
       const json = await request(actionLink, {login, password})
+      console.log(json)
       if (!json.error) {
-         dispatch(signIn(json))
+         dispatch(signIn({login}))
+         json.contacts.forEach(c=>{
+            dispatch({
+               type: CONTACT_ADD,
+               payload: c
+            })
+         })
       }
       else{
          dispatch(setError(json.error.text))

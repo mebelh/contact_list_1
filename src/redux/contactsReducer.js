@@ -1,22 +1,6 @@
-import {CONTACT_ADD, CONTACT_DELETE, CONTACT_EDIT} from './types'
+import {CONTACT_ADD, CONTACT_DELETE, CONTACT_EDIT, USER_SIGNOUT} from './types'
 
-const initialState = [
-   {
-      id: 1,
-      name: 'Алексей Штора',
-      phone: '123123123'
-   },
-   {
-      id: 2,
-      name: 'Валерий Штора',
-      phone: '123123123'
-   },
-   {
-      id: 3,
-      name: 'Алексей Валерий',
-      phone: '123123123'
-   }
-]
+const initialState = []
 
 export function contactsReducer(state = initialState, action) {
    switch (action.type) {
@@ -25,8 +9,10 @@ export function contactsReducer(state = initialState, action) {
       case CONTACT_DELETE:
          return state.filter(c => c.id !== action.payload)
       case CONTACT_EDIT:
-         const idx = state.indexOf(c => c.id === action.payload.id)
+         const idx = state.findIndex(c => c.id === action.payload.id)
          return [...state.slice(0, idx - 1), action.payload, ...state.slice(idx + 1)]
+      case USER_SIGNOUT:
+         return initialState
       default:
          return state
    }

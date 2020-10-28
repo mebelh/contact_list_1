@@ -1,10 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {createContact} from '../Contact'
-import {AddContact} from '../AddContact'
+import AddContact from '../AddContact'
 
-function Contacts({contacts: contactsData}) {
-   const contacts = contactsData.map(createContact)
+function Contacts({contactsData}) {
+   const contacts = contactsData ? contactsData.map(createContact) : ''
+   const changeContact = (id, newContact) => {
+
+   }
    return (
       <div className='contacts'>
          <AddContact/>
@@ -16,6 +19,6 @@ function Contacts({contacts: contactsData}) {
    )
 }
 
-const mapStateToProps = ({contacts}) => ({contacts})
+const mapStateToProps = ({contacts}) => ({contactsData: contacts})
 
 export default connect(mapStateToProps, null)(Contacts)

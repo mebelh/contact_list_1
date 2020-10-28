@@ -1,17 +1,19 @@
 import React, {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import {connect, useDispatch} from 'react-redux'
 import {addContact} from '../redux/actions'
 
-export function AddContact() {
+function AddContact({user}) {
    const [name, setName] = useState('')
    const [phone, setPhone] = useState('')
    const dispatch = useDispatch()
    const addContactHandler = (e) => {
       e.preventDefault()
-      if(!name || !phone || !+phone || phone.length < 10 || phone.length > 12 || name.length < 3){
+      if (!name || !phone || !+phone || phone.length < 10 || phone.length > 12 || name.length < 3) {
          return
       }
-      dispatch(addContact({name, phone}))
+      setPhone('')
+      setName('')
+      dispatch(addContact({name, phone}, user.login))
    }
    return (
       <form className='addContact' onSubmit={addContactHandler}>
@@ -40,3 +42,7 @@ export function AddContact() {
       </form>
    )
 }
+
+const mapStateToProps = ({user}) => ({user})
+
+export default connect(mapStateToProps, null)(AddContact)
