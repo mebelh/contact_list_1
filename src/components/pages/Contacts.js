@@ -5,9 +5,7 @@ import AddContact from '../AddContact'
 
 function Contacts({contactsData}) {
    const contacts = contactsData ? contactsData.map(createContact) : ''
-   const changeContact = (id, newContact) => {
 
-   }
    return (
       <div className='contacts'>
          <AddContact/>
