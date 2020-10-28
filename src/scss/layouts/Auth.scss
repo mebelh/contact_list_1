@@ -1,0 +1,18 @@
+.auth{
+  box-shadow: 0 1px 3px $primary-darkgray;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30%;
+  position: relative;
+  &__error{
+    top: -50px;
+    width: 80%;
+    left: 50%;
+    margin-left: -40%;
+    border-radius: 5px;
+    color: tomato;
+    padding: 5px;
+    border: 1px solid tomato;
+    position: absolute;
+  }
+}

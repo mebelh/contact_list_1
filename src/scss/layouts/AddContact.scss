@@ -1,0 +1,8 @@
+.addContact{
+  box-shadow: 0 1px 5px $primary-gray;
+  padding: 10px;
+  &__title{
+    text-align: center;
+    margin: 5px;
+  }
+}

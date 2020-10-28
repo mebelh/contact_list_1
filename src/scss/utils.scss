@@ -1,0 +1,26 @@
+.container{
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.mt-sm{
+  margin-top: 15px;
+}
+
+.mt-md{
+  margin-top: 25px;
+}
+
+.mt-lg{
+  margin-top: 40px;
+}
+

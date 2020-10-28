@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a, .link {
+  text-decoration: none;
+  color: $primary-darkblue;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-lightblue;
+  }
+}
+
+input, input:focus {
+  outline: none;
+  border: 1px solid $primary-gray;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background-color: #fff;
+  border: 1px solid $primary-gray;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-gray;
+  }
+
+  &:active {
+    background-color: $primary-lightblue;
+    color: #eeeeee;
+  }
+}

@@ -1,0 +1,14 @@
+.header{
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 1px 3px $primary-darkgray;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  &__content{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}

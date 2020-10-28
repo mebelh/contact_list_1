@@ -1,0 +1,22 @@
+.contacts {
+  width: 100%;
+  margin-top: 90px;
+  &__list{
+    box-shadow: 0 1px 10px $primary-gray;
+    border-radius: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 100px;
+
+    & > :last-child {
+      border: none;
+    }
+  }
+  &__item {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $primary-darkgray;
+  }
+}
